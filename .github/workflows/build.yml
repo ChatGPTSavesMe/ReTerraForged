@@ -20,7 +20,10 @@ jobs:
       - name: Prepare Gradle
         uses: gradle/gradle-build-action@v3
 
-      - name: Build the mod
+    
+            - name: Make gradlew executable
+        run: chmod +x ./gradlew
+- name: Build the mod
         run: ./gradlew --no-daemon clean build
 
       - name: Upload built jars
